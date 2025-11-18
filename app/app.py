@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 HTML = """
 <!doctype html>
-<title>My Cloud App</title>
+<title>BNSP</title>
 <h1>Ujian BNSP</h1>
 <p>Semoga saya lulus</p>
 <p>yang diperlukan adalah: Docker + AWS EC2 + CI/CD + Prometheus + Grafana</p>

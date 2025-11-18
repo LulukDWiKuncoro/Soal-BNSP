@@ -20,7 +20,7 @@ jobs:
 
       - name: Deploy to Server
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "
+          ssh -o StrictHostKeyChecking=no ${{ secretAs.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "
           cd ${{ secrets.REMOTE_DIR }} &&
           git pull &&
           docker-compose down &&
