@@ -7,10 +7,11 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
     
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
     - name: Deploy to VPS
       uses: appleboy/ssh-action@master
       with:
@@ -19,9 +20,10 @@ jobs:
         key: ${{ secrets.VPS_SSH_KEY }}
         script: |
           cd /home/luluk_/Soal-BNSP
+
           git pull origin main
-          docker build -t Soal-BNSP .
-          docker stop Soal-BNSP || true
-          docker rm Soal-BNSP || true
-          docker run -d --name Soal-BNSP -p 80:80 Soal-BNSP
-          echo "🚀 Deployment successful!"
+
+          docker-compose down
+          docker-compose up -d --build
+
+          echo " Deployment success!"
