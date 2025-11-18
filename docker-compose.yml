@@ -27,7 +27,7 @@ services:
       - /var/lib/docker/:/var/lib/docker:ro
     restart: always
 
-    prometheus:
+  prometheus:
     image: prom/prometheus
     container_name: prometheus
     volumes:
