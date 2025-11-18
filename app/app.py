@@ -5,9 +5,9 @@ app = Flask(__name__)
 HTML = """
 <!doctype html>
 <title>sepele</title>
-<h1>Ujian BNSP</h1>
+<h1>BNSP</h1>
 <p>Semoga saya lulus</p>
-<p>yang diperlukan adalah: Docker + AWS EC2 + CI/CD + Prometheus + Grafana</p>
+<p>yang diperlukan adalah: Docker + AWS EC2/VPS IDCLOUDHOST + CI/CD + Prometheus + Grafana</p>
 """
 
 @app.route("/")
